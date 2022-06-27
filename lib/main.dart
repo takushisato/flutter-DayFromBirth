@@ -11,18 +11,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Column(
-          children: [
-            const TextField(),
-            DataPickerDialog(initialData: DateTime(DateTime.now().year-10),
-              firstDate: DateTime(DateTime.now().year-100),
-              lastDate: DateTime(DateTime.now().year)
-            ),
-            ElevatedButton(
-              onPressed: (){print('ボタンを押しました');},
-              child: Text('生まれてから何日目？'),
-            )
-          ],
+        appBar: AppBar(
+          title: const Text('my birthday'),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: '名前',
+                    hintText: '名前',
+                    icon: Icon(Icons.account_circle),
+                  ),
+                ),
+              ),
+              ElevatedButton(onPressed: (
+                  ) {
+                showDatePicker(
+                    context: context,
+                    initialDate: DateTime(DateTime.now().year-10),
+                    firstDate: DateTime(DateTime.now().year-100),
+                    lastDate: DateTime(DateTime.now().year),);
+              }, child: new Text('誕生日選択'),),
+              ElevatedButton(onPressed: () {}, child: const Text('生まれてから何日目？'))
+            ],
+          ) ,
         ),
       ),
     );
