@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
 
       home: Scaffold(
         appBar: AppBar(
@@ -39,7 +40,7 @@ class home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 child: TextField(
                   onChanged: (newText){
                     name = newText;
@@ -68,7 +69,7 @@ class home extends StatelessWidget {
                         Result(name: name!, dayFromBirthday:DateTime.now().difference(birthday!).inDays)),
                     );
                   print(name);
-                  print(birthday);
+                  print(DateTime.now().difference(birthday!).inDays);
                 }
               }, child: const Text('生まれてから何日目？'))
             ],

@@ -14,13 +14,13 @@ class Result extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/birthday.png'),
+          Image.asset("assets/birthday.jpg"),
           Text('${name} さんは生まれてから',style: TextStyle(fontSize: 20),),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("今日で", style: TextStyle(fontSize: 20)),
-              Text("${dayFromBirthday} 日目", style: TextStyle(fontSize: 20)),
+              Text("${dayFromBirthday} 日目", style: TextStyle(fontSize: 50),),
               Text("です", style: TextStyle(fontSize: 20)),
             ],
           )
